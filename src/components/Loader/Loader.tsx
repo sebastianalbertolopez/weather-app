@@ -1,6 +1,6 @@
 import React from 'react';
 import LoaderStyles from './LoaderStyles';
-import LoadingIcon from '../../assets/loading.svg';
+import LoadingIcon from '../../assets/images/loading.svg';
 
 const Loader = () => {
     return (

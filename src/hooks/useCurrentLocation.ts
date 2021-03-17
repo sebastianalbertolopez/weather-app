@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import useFetch from './useFetch';
 import { currentLocationURL } from '../apis/utils';
 
@@ -9,7 +8,7 @@ export interface CurrentLocation {
 }
 
 const useCurrentLocation = (): CurrentLocation | undefined => {
-    const { data: currentLocation, status } = useFetch<CurrentLocation>(currentLocationURL());
+    const { data: currentLocation } = useFetch<CurrentLocation>(currentLocationURL());
     return currentLocation;
 };
 

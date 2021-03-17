@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { IWeather } from '../../apis/models/weather';
 import ForecastCard from "./ForecastCard";
+import ForecastStyles from './ForecastStyles';
 
 export interface ForecastProps {
     forecastList?: IWeather[];
@@ -21,13 +22,15 @@ const Forecast = ({ forecastList }: ForecastProps) => {
     };
 
     return (
-        <Row>
-            {getDailyForecast(forecastList).map((forecastItem: IWeather, idx: number) => (
-                <Col key={ idx }>
-                    <ForecastCard forecast={ forecastItem } />
-                </Col>
-            ))} 
-        </Row>
+        <ForecastStyles>
+            <Row>
+                {getDailyForecast(forecastList).map((forecastItem: IWeather, idx: number) => (
+                    <Col key={ idx }>
+                        <ForecastCard forecast={ forecastItem } />
+                    </Col>
+                ))} 
+            </Row>
+        </ForecastStyles>
     );
 };
 

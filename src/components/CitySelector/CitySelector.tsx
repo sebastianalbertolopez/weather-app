@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, FormControl, Button } from 'react-bootstrap';
+import CitySelectorStyles from './CitySelectorStyles';
 
 export interface ICitySelector {
     onCheckWeather: (city: string) => void;
@@ -23,20 +24,22 @@ const CitySelector = (props: ICitySelector) => {
     }
 
     return (
-        <Form inline>
-            <FormControl 
-                placeholder="Enter a city e.g.: Buenos Aires" 
-                onChange={ (event) => setCity(event.target.value) } 
-                value={ city } 
-                onKeyDown={ handleKeyDown }
-                className="mr-sm-2"
-            />
-            <Button 
-                disabled={ !city || props.citiesLength === MAX_CITIES_ALLOWED } 
-                onClick={ () => checkWeather(city) } 
-                variant="outline-info">Check Weather
-            </Button>
-        </Form>
+        <CitySelectorStyles>
+            <Form inline>
+                <FormControl 
+                    placeholder="Enter a city e.g.: Buenos Aires" 
+                    onChange={ (event) => setCity(event.target.value) } 
+                    value={ city } 
+                    onKeyDown={ handleKeyDown }
+                    className="mr-sm-2"
+                />
+                <Button 
+                    disabled={ !city || props.citiesLength === MAX_CITIES_ALLOWED } 
+                    onClick={ () => checkWeather(city) } 
+                    variant="outline-info">Check Weather
+                </Button>
+            </Form>
+        </CitySelectorStyles>
     );
 };
 

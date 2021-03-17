@@ -9,16 +9,13 @@ const AppStyles = createGlobalStyle`
         height: 100%;
         width: 100%;
         background: #fafafa;
+        font-size: 13px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     body {
         display: flex;
         flex-direction: column;
-    }
-    h1 {
-        text-align: center;
-        font-size: 1.5rem;
-        margin-top: 0;
-        margin-bottom: 25px;
     }
     #root {
         min-height: 100vh;
@@ -30,7 +27,6 @@ const AppStyles = createGlobalStyle`
     .main {
         background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
         flex: 1;
-        overflow: auto;
         position: relative;
         padding: 1em;
 

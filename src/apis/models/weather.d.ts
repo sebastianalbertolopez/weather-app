@@ -20,4 +20,5 @@ export interface IWeather {
         speed: number;
     };
     dt: number;
+    dt_txt: string;
 }
