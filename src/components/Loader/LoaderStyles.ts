@@ -4,15 +4,16 @@ const HeaderStyles = styled.div`
     flex: 1;
     min-height: 100%;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
+
+    margin: auto;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    bottom: 0;
+    right: 0;
     
     img {
         -webkit-transform: rotate(20deg);

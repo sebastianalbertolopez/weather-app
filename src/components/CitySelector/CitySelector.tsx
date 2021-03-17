@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, Button, Form } from 'react-bootstrap';
+import { Form, FormControl, Button } from 'react-bootstrap';
 
 export interface ICitySelector {
     onCheckWeather: (city: string) => void;
@@ -13,8 +13,13 @@ const CitySelector = (props: ICitySelector) => {
 
     const handleKeyDown = (ev: React.KeyboardEvent) => {
         if (ev.key === 'Enter') {
-            props.onCheckWeather(city);
+            checkWeather(city);
         }
+    }
+
+    const checkWeather = (city: string) => {
+        props.onCheckWeather(city);
+        setCity('');
     }
 
     return (
@@ -28,7 +33,7 @@ const CitySelector = (props: ICitySelector) => {
             />
             <Button 
                 disabled={ !city || props.citiesLength === MAX_CITIES_ALLOWED } 
-                onClick={ () => props.onCheckWeather(city) } 
+                onClick={ () => checkWeather(city) } 
                 variant="outline-info">Check Weather
             </Button>
         </Form>

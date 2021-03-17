@@ -19,13 +19,15 @@ const UseFetch = <T>(url: string): Response<T> => {
             if(!url) return;
             try {
                 setStatus('loading');
-                const data = await (await fetch(url)).json();
-                setData(data);
+                const data = await fetch(url);
+                if (!data.ok) {
+                    throw new Error('Failed to fetch');
+                }
+                setData(await data.json());
                 setStatus('ready');
             }
             catch(err) {
                 setStatus('error');
-                throw err;
             }
         }
         fetchWeather();

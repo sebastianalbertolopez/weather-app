@@ -33,6 +33,29 @@ const AppStyles = createGlobalStyle`
         overflow: auto;
         position: relative;
         padding: 1em;
+
+        .nav-tabs {
+            border-bottom: 1px solid #FAFAFA;
+            margin-bottom: 1em;
+        }
+        .nav-tabs .nav-item.show .nav-link, 
+        .nav-tabs .nav-link.active, 
+        .nav-link:not(.active), 
+        .nav-link:not(.active):hover {
+            color: #FAFAFA;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+        }
+        .nav-tabs .nav-link.active {
+            border-bottom: 2px solid #FAFAFA;
+        }
+        .nav-link:not(.active) {
+            color: #333;
+        }
+        .tab-content, .tab-pane {
+            height: 100%;
+        }
     }
 `;
 

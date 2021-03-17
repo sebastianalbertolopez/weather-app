@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { Navbar } from 'react-bootstrap';
 import HeaderStyles from './HeaderStyles';
 
 import HeaderIcon from '../../assets/weather-icon.svg';
