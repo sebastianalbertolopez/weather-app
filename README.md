@@ -1,6 +1,10 @@
 # Weather App V1 ⛅ [[DEMO]](https://weather-app-nu-pink.vercel.app/)
 
-## Available Scripts
+## Summary
+Weather App consists in request current weather data and 5-day forecast data from user provided city or current location.
+Weather data is obtained consuming [OpenWeatherMap](https://openweathermap.org/) and Location API Service from IP data is fetched from https://ipapi.co/
+
+## Usage
 
 In the project directory, you can run:
 
@@ -26,3 +30,8 @@ Your app is ready to be deployed!
 
 ### `npm run lint`
 Show errors/warnings detected by ESLint
+
+
+
+## Licence
+MIT
