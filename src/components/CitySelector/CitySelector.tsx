@@ -14,6 +14,7 @@ const CitySelector = (props: CitySelectorProps) => {
 
     const handleKeyDown = (ev: React.KeyboardEvent) => {
         if (ev.key === 'Enter') {
+            ev.preventDefault();
             checkWeather(city);
         }
     }
