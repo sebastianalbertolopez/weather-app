@@ -20,8 +20,8 @@ const ForecastCard = ({ forecast }: ForecastProps) => {
                     <img
                         src={ `https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png` }
                         alt=""
-                        width="150"
-                        height="150"
+                        width="100"
+                        height="100"
                     />
                     <div className="description">{ forecast.weather[0].main }</div>
                     <div>Feels like { Math.round(forecast.main.feels_like) }°C</div>

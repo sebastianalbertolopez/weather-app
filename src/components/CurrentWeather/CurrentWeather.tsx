@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import { IWeather } from '../../apis/models/weather';
 import CurrentWeatherStyles from './CurrentWeatherStyles';
 
@@ -13,7 +13,7 @@ const CurrentWeather = ({ weather }: CurrentWeatherProps) => {
             <Card className="text-center" border="dark">
                 <Card.Header>CURRENT WEATHER</Card.Header>
                 <Card.Body>
-                    <h1>{ weather.name }, { weather.sys.country }</h1>
+                    <h4>{ weather.name }, { weather.sys.country }</h4>
                     <div className="temp">{ Math.round(weather.main.temp) }°C</div>
                     <div className="feels-like">
                         Feels like { Math.round(weather.main.feels_like) }°C
@@ -21,15 +21,13 @@ const CurrentWeather = ({ weather }: CurrentWeatherProps) => {
                     <img
                         src={`https://openweathermap.org/img/wn/${ weather.weather[0].icon }@2x.png`}
                         alt=""
-                        width="150"
-                        height="150"
+                        width="100"
+                        height="100"
                     />
                     <div className="description">{ weather.weather[0].main }</div>
-                    <div className="secondary-data">
-                        <div>Humidity: { weather.main.humidity }%</div>
-                        <div>Wind: { weather.wind.speed } m/s</div>
-                        <div>Pressure: { weather.main.pressure } hPa</div>
-                    </div>
+                    <div>Humidity: { weather.main.humidity }%</div>
+                    <div>Wind: { weather.wind.speed } m/s</div>
+                    <div>Pressure: { weather.main.pressure } hPa</div>
                 </Card.Body>
             </Card>
         </CurrentWeatherStyles>

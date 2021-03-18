@@ -50,9 +50,6 @@ const AppStyles = createGlobalStyle`
         .nav-link:not(.active) {
             color: #333;
         }
-        .tab-content, .tab-pane {
-            height: 100%;
-        }
     }
 `;
 
