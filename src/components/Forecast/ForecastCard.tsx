@@ -4,11 +4,11 @@ import { Card } from "react-bootstrap";
 import { IWeather } from '../../apis/models/weather';
 import ForecastCardStyles from './ForecastCardStyles';
 
-export interface ForecastProps {
+export interface ForecastCardProps {
     forecast: IWeather;
 }
 
-const ForecastCard = ({ forecast }: ForecastProps) => {
+const ForecastCard = ({ forecast }: ForecastCardProps) => {
     return (
         <ForecastCardStyles>
             <Card border="dark" className='text-center mb-sm-2'>

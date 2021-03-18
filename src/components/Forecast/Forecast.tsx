@@ -1,16 +1,17 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { IForecast } from "../../apis/models/forecast";
 import { IWeather } from '../../apis/models/weather';
 import ForecastCard from "./ForecastCard";
 import ForecastStyles from './ForecastStyles';
 
 export interface ForecastProps {
-    forecastList?: IWeather[];
+    forecastList?: IForecast;
 }
 
 const Forecast = ({ forecastList }: ForecastProps) => {
-    const getDailyForecast = (forecast?: IWeather[]): IWeather[] => {
-        const dailyForecast: IWeather[] = [];
+    const getDailyForecast = (forecast?: IForecast): IForecast => {
+        const dailyForecast: IForecast = [];
 
         if (forecast) {
             for (let i = 0; i < forecast.length; i += 8) {
