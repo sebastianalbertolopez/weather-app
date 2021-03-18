@@ -10,7 +10,6 @@ const FooterStyles = styled.footer`
     display: flex;
     justify-content: center;
     width: 100%;
-
     a {
         color: #ccc;
     }

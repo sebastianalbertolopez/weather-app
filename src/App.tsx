@@ -11,6 +11,8 @@ import WeatherError from './components/WeatherError/WeatherError';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import Forecast from './components/Forecast/Forecast';
 
+const DEFAULT_CITY = 'BUENOS AIRES';
+
 const App = () => {
     const [cities, setCities] = useState<string[]>([]);
     const [selectedCity, setSelectedCity] = useState<string>('');
@@ -18,8 +20,8 @@ const App = () => {
     // Obtiene los datos de la ubicación actual del usuario.
     const currentLocation = useCurrentLocation();
 
-    const { forecastData, forecastStatus } = useForecast(selectedCity || 'BUENOS AIRES');
-    const { weatherData, weatherStatus } = useWeather(selectedCity || 'BUENOS AIRES');
+    const { forecastData, forecastStatus } = useForecast(selectedCity || DEFAULT_CITY);
+    const { weatherData, weatherStatus } = useWeather(selectedCity || DEFAULT_CITY);
 
     const getWeatherContent = () => {
         if (forecastStatus === 'loading' || weatherStatus === 'loading') {
@@ -50,7 +52,6 @@ const App = () => {
 
             return citiesCopy;
         });
-        //setCities((cities) => [...cities, upperCaseCity]);
     }, []);
 
     useEffect(
@@ -60,7 +61,22 @@ const App = () => {
 
     const handleTabChange = (city: any, event: any) => {
         event.preventDefault();
-        setSelectedCity(city as string);
+        if (city === selectedCity) {
+            removeCity(city);
+        }
+        else {
+            setSelectedCity(city as string);
+        }
+    };
+
+    const removeCity = (city: string) => {
+        let array: string[] = [...cities];
+        const index: number = array.indexOf(city);
+        if (index !== -1) {
+            array.splice(index, 1);
+            setCities(array);
+            checkWeatherHandler(array[0] || DEFAULT_CITY);
+        }
     };
 
     const tabs = cities.map((city, idx) => {

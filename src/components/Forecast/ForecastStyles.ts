@@ -7,7 +7,6 @@ const ForecastStyles = styled.div`
             margin-bottom: 1em;
         }
     }
-
     .row {
         margin-bottom: 1em;
     }

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 const WeatherErrorStyles = styled.div`
-    .weatherCardContainer {
+    .error-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: #797979;
-    
-        .weatherCardError {
+        .error-card {
             min-height: 360px;
             min-width: 360px;
             background: #FFF;

@@ -42,6 +42,7 @@ const AppStyles = createGlobalStyle`
             background-color: transparent;
             border: none;
             border-radius: 0;
+            font-size: 16px;
         }
         .nav-tabs .nav-link.active {
             border-bottom: 2px solid #FAFAFA;

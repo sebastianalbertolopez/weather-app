@@ -5,8 +5,8 @@ import WeatherErrorStyles from './WeatherErrorStyles';
 export default function WeatherCardError() {
     return (
         <WeatherErrorStyles>
-            <div className='weatherCardContainer'>
-                <div className='weatherCardError'>
+            <div className='error-container'>
+                <div className='error-card'>
                     <img 
                         src={ NoLocationFound } 
                         alt='no location found'

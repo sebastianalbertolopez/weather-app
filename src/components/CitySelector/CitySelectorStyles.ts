@@ -6,7 +6,6 @@ const CitySelectorStyles = styled.div`
         width: auto;
         padding: .375rem .4rem;
     }
-
     button {
         padding: .375rem .3rem;
     }
