@@ -8,6 +8,9 @@ Weather data is obtained consuming [OpenWeatherMap](https://openweathermap.org/)
 
 In the project directory, you can run:
 
+### `npm install`
+To install dependencies.
+
 ### `npm start`
 
 Runs the app in the development mode.\
